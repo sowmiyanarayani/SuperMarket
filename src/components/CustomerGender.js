@@ -8,11 +8,12 @@ const CustomerGender = (context) => {
 	return <div>
 		<label> Gender : </label>
 		<select
-			type="number"
+			type="radio"
 			value={ gender }
 			placeholder="Enter the Mobile No"
 			onChange={ (event) => setCustomerGender(event.target.value) }
 		>
+			<option value="">Select Gender</option>
 			<option value="male">Male</option>
 			<option value="female">Female</option>
 		</select>

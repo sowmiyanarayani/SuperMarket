@@ -1,9 +1,11 @@
 import { React } from 'react';
 const Button = (context) => {
-	const { actions: { addCustomers }} = context;
+	const { actions: { addCustomer }} = context;
 
 	return <div>
-		<button onClick={ () => addCustomers() }>save</button>
+		<button onClick={ () => addCustomer() }>
+			Save Customer
+		</button>
 	</div>;
 };
 
