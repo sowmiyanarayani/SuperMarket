@@ -6,6 +6,14 @@ const CustomerList = (context) => {
 
 	return (
 		<table className="gird">
+			<thead>
+				<tr>
+					<th>Customer Name</th>
+					<th>Mobile No</th>
+					<th>item</th>
+					<th>prices</th>
+				</tr>
+			</thead>
 			<tbody>
 				{ customerDetails.map((customer) =>
 					<Customer
@@ -13,6 +21,7 @@ const CustomerList = (context) => {
 						name={ customer.name }
 						mobileNo={ customer.mobileNo }
 						gender={ customer.gender }
+						items={ customer.items }
 					/>) }
 			</tbody>
 		</table>

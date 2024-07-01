@@ -2,7 +2,7 @@ import { rndString } from '@laufire/utils/random';
 const CustomerManager = {
 	addCustomer: (context) => {
 		const {
-			state: { name, mobileNo, gender, customerDetails },
+			state: { name, mobileNo, gender, items, customerDetails },
 			config: { idLength },
 		} = context;
 
@@ -13,6 +13,7 @@ const CustomerManager = {
 				name: name,
 				mobileNo: mobileNo,
 				gender: gender,
+				items: items,
 			},
 		];
 	},
