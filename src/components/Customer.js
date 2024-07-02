@@ -1,5 +1,5 @@
 import { React } from 'react';
-const Customer = ({ id, name, mobileNo, gender, items }) =>
+const Customer = ({ id, name, mobileNo, gender, items, price }) =>
 	<tr
 		key={ id }
 		className={ `${ gender }` }
@@ -7,6 +7,7 @@ const Customer = ({ id, name, mobileNo, gender, items }) =>
 		<td>{ name }</td>
 		<td>{ mobileNo }</td>
 		<td>{ items }</td>
+		<td>{ price }</td>
 	</tr>;
 
 export default Customer;

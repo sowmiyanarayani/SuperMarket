@@ -11,7 +11,7 @@ const CustomerList = (context) => {
 					<th>Customer Name</th>
 					<th>Mobile No</th>
 					<th>item</th>
-					<th>prices</th>
+					<th>price</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -22,6 +22,7 @@ const CustomerList = (context) => {
 						mobileNo={ customer.mobileNo }
 						gender={ customer.gender }
 						items={ customer.items }
+						price={ customer.price }
 					/>) }
 			</tbody>
 		</table>
