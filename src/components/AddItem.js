@@ -1,6 +1,6 @@
 /* eslint-disable max-lines-per-function */
 import React from 'react';
-
+import { peek } from '@laufire/utils/debug';
 const AddItem = (context) => {
 	const {
 		actions: { setSelectItems },
@@ -9,17 +9,21 @@ const AddItem = (context) => {
 
 	return (
 		<div>
-			<label>Items:</label>
-			{ products.map((product, index) =>
-				<div key={ index }>
-					<input
-						type="checkbox"
-						id={ `checkbox-${ index }` }
+			<label>Item :</label>
+			<select
+				type="radio"
+				onChange={ (event) => {
+					peek(event.target.value);
+					return setSelectItems(event.target.value);
+				} }
+			>
+				<option value="">Select Items</option>
+				{ products.map((product, index) =>
+					<option
+						key={ index }
 						value={ product.name }
-						onChange={ (e) => setSelectItems(e.target.value) }
-					/>
-					<label htmlFor={ `checkbox-${ index }` }>{ product.name }</label>
-				</div>) }
+					>{ product.name }</option>) }
+			</select>
 		</div>
 	);
 };
