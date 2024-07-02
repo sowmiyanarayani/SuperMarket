@@ -3,23 +3,23 @@ import React from 'react';
 
 const AddItem = (context) => {
 	const {
-		state: { item },
 		actions: { setSelectItems },
-		config: { items },
+		config: { products },
 	} = context;
 
 	return (
 		<div>
-			<label>Items :</label>
-			<select
-				type="radio"
-				value={ item }
-				onChange={ (event) => setSelectItems(event.target.value) }
-			>
-				<option value="">Select Items</option>
-				{ items.map((product, index) =>
-					<option key={ index }>{ product.name }</option>) }
-			</select>
+			<label>Items:</label>
+			{ products.map((product, index) =>
+				<div key={ index }>
+					<input
+						type="checkbox"
+						id={ `checkbox-${ index }` }
+						value={ product.name }
+						onChange={ (e) => setSelectItems(e.target.value) }
+					/>
+					<label htmlFor={ `checkbox-${ index }` }>{ product.name }</label>
+				</div>) }
 		</div>
 	);
 };

@@ -1,16 +1,10 @@
 const PriceManager = {
 	itemPrices: (context) => {
-		const { state: { price }} = context;
+		const { config: { product }} = context;
+		const getPrice = (itemName) =>
+			product.find((item) => item.name === itemName).price || 0;
 
-		return [
-			...price,
-			{
-				milk: 10,
-				biscuit: 15,
-				chocolate: 20,
-				butter: 150,
-			},
-		];
+		return { price: getPrice };
 	},
 };
 

@@ -2,8 +2,7 @@ const seed = {
 	name: '',
 	mobileNo: '',
 	gender: '',
-	item: '',
-	price: [],
+	items: [],
 	customerDetails: [],
 };
 
