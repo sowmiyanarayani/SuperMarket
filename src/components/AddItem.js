@@ -1,10 +1,11 @@
+/* eslint-disable max-len */
 /* eslint-disable max-lines-per-function */
 import React from 'react';
-import { peek } from '@laufire/utils/debug';
 const AddItem = (context) => {
 	const {
 		actions: { setSelectItems },
 		config: { products },
+		state: { items },
 	} = context;
 
 	return (
@@ -12,10 +13,11 @@ const AddItem = (context) => {
 			<label>Item :</label>
 			<select
 				type="radio"
-				onChange={ (event) => {
-					peek(event.target.value);
-					return setSelectItems(event.target.value);
-				} }
+				multiple={ true }
+				value={ items }
+				onChange={ (e) => setSelectItems(Array.from(e.target.selectedOptions,
+					(option) => option.value)) }
+
 			>
 				<option value="">Select Items</option>
 				{ products.map((product, index) =>

@@ -6,8 +6,9 @@ const CustomerManager = {
 			state: { name, mobileNo, gender, items, customerDetails },
 			config: { idLength, products },
 		} = context;
-		const getPrice = (itemName) =>
-			products.find((item) => item.name === itemName)?.price || null;
+		const getPrice = () => items.reduce((total, itemName) =>
+			total + (products.find((product) => product.name === itemName)
+				?.price || 0), 0);
 
 		return [
 			...customerDetails,

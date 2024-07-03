@@ -2,7 +2,7 @@ import { React } from 'react';
 const Customer = ({ id, name, mobileNo, gender, items, price }) =>
 	<tr
 		key={ id }
-		className={ `${ gender }` }
+		className={ `customer ${ gender }` }
 	>
 		<td>{ name }</td>
 		<td>{ mobileNo }</td>

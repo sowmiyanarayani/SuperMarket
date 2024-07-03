@@ -1,7 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable max-lines-per-function */
 import Customer from './Customer';
-const CustomerList = (context) => {
+const AddCustomer = (context) => {
 	const { state: { customerDetails }} = context;
 
 	return (
@@ -29,4 +29,4 @@ const CustomerList = (context) => {
 	);
 };
 
-export default CustomerList;
+export default AddCustomer;
